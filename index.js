@@ -21,6 +21,9 @@ Promise.all(search_requests)
 .then(function(results){
   var found_tocs = Array.prototype.concat.apply([], results);
   out_console(keyword, found_tocs);
+})
+.catch(function(err){
+  console.log(err);
 });
 
 function out_console(keyword, found_tocs){

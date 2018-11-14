@@ -36,6 +36,7 @@ module.exports.search = function(keyword, page = 0){
         resolve(found_tocs);
       })
       .catch(function(err){
+        reject(err);
       });
   });
 }
