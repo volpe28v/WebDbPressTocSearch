@@ -5,8 +5,11 @@ if (process.argv.length < 3){
   return;
 }
 
+var yellow  = '\u001b[33m';
+var reset   = '\u001b[0m';
+
 var keyword = process.argv[2];
-var keywordReg = new RegExp(keyword, "i");
+var keywordReg = new RegExp('(' + keyword + ')', "gi");
 console.log("keyword: " + keyword);
 
 var backnumber_url = 'https://gihyo.jp/magazine/wdpress/backnumber'
@@ -40,7 +43,7 @@ client.fetch(backnumber_url, {})
 
     if (foundLines.length > 0){
       console.log("\n・" + toc.title);
-      console.log("\t" + foundLines.join("\n\t"));
+      console.log("\t" + foundLines.join("\n\t").replace(keywordReg, yellow + '$1' + reset));
     }
   });
 });
