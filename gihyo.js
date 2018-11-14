@@ -8,11 +8,9 @@ module.exports.search = function(keyword, page = 0){
   return new Promise(function(resolve, reject){
     client.fetch(backnumber_url + page, {})
       .then(function(result){
-        var urls = [];
         var promises = [];
         result.$('.magazineList01 .data a').each(function(){
           var url = 'https://gihyo.jp' + result.$(this).attr('href');
-          urls.push(url);
           promises.push(client.fetch(url, {}));
         });
 
