@@ -1,12 +1,12 @@
 var client = require('cheerio-httpcli');
 
-var backnumber_url = 'https://gihyo.jp/magazine/wdpress/backnumber'
+var backnumber_url = 'https://gihyo.jp/magazine/wdpress/backnumber?start='
 
-module.exports.search = function(keyword){
+module.exports.search = function(keyword, page = 0){
   var keyword_reg = new RegExp('(' + keyword + ')', "gi");
 
   return new Promise(function(resolve, reject){
-    client.fetch(backnumber_url, {})
+    client.fetch(backnumber_url + page, {})
       .then(function(result){
         var urls = [];
         var promises = [];
