@@ -1,10 +1,17 @@
 # WebDbPressTocSearch
 WEB+DB PRESS の目次をキーワード検索するツール
 
+# Usage
+```
+$ node index.js keyword [number_of_books (default 20)]
+```
+
 # Example
 ```
-▶node index.js React
-keyword: React
+▶node index.js react 40
+searching...
+検索キーワード: react
+ヒットした書籍数: 5 冊
 
 ・WEB+DB PRESS Vol.106｜技術評論社
 	ReactでGUI設計が変わる！
@@ -21,5 +28,9 @@ keyword: React
 
 ・WEB+DB PRESS Vol.90｜技術評論社
 	【第10回】RailsでReactを使う ……react-railsでサーバサイドレンダリング……髙橋 侑久
+
+・WEB+DB PRESS Vol.86｜技術評論社
+	補完，文法チェック，Git，GitHub，テスト，Rails，React……大竹 智也
+	【第12回】Reactによるフロントエンド開発の変革……伊藤 直也
 
 ```
