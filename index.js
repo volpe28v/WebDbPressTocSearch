@@ -1,18 +1,19 @@
 var gihyo = require('./gihyo');
+var DEFAULT_NUMBER = 20;
+var PAGE_NUMBER = 20;
 
 if (process.argv.length < 3){
-  console.log("node index.js keyword [number_of_books]");
+  console.log("node index.js keyword [number_of_books (default " + DEFAULT_NUMBER + ")]");
   return;
 }
 
 var keyword = process.argv[2];
-var page = process.argv[3] || 1;
-var PAGE_NUMBER = 20;
+var number = process.argv[3] || DEFAULT_NUMBER;
 
 console.log("searching...");
 
 var search_requests = [];
-for(var i = 0; i < page; i += PAGE_NUMBER){
+for(var i = 0; i < number; i += PAGE_NUMBER){
   search_requests.push(gihyo.search(keyword, i));
 }
 
