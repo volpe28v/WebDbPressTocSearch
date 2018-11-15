@@ -1,14 +1,20 @@
 # WebDbPressTocSearch
 WEB+DB PRESS の目次をキーワード検索するツール
 
+# Install
+```
+$ npm install
+$ npm link
+```
+
 # Usage
 ```
-$ node index.js keyword [number_of_books (default 20)]
+$ webdbpress keyword [number_of_books (default 20)]
 ```
 
 # Example
 ```
-▶node index.js react 40
+▶webdbpress react 40
 searching...
 検索キーワード: react
 ヒットした書籍数: 5 冊

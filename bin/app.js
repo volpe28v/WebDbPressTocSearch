@@ -1,9 +1,11 @@
-var gihyo = require('./gihyo');
+#!/usr/bin/env node
+
+var gihyo = require('../lib/gihyo');
 var DEFAULT_NUMBER = 20;
 var PAGE_NUMBER = 20;
 
 if (process.argv.length < 3){
-  console.log("node index.js keyword [number_of_books (default " + DEFAULT_NUMBER + ")]");
+  console.log("webdbpress keyword [number_of_books (default " + DEFAULT_NUMBER + ")]");
   return;
 }
 
